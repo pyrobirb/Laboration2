@@ -13,16 +13,15 @@ namespace Laboration2
 
         public DateTime startDatum { get ; set; }
         public DateTime slutDatum { get; set; }
-        public string möjligaBetyg { get; set; }
+        public string betyg { get; set; }
         public string kursID { get; set; }
         public string lärarlagID { get; set; }
-        public string slutbetyg { get; set; }
 
-        private List<Lärare> Lärare = new List<Lärare>();
+        private List<Lärare> Lärarlag = new List<Lärare>();
 
         public List<Lärare> HämtaLärare() 
         {
-            return Lärare;
+            return Lärarlag;
         }
 
         private List<Student> Studenter = new List<Student>();
@@ -33,16 +32,15 @@ namespace Laboration2
         }
 
 
-        public Kurs(string kursNamn, DateTime startdatum, DateTime slutdatum, string möjligabetyg, string kursID, string lärarlagID, string slutBetyg, List<Lärare> lärare, List<Student> studenter)
+        public Kurs(string kursNamn, DateTime startdatum, DateTime slutdatum, string betyg, string kursID, string lärarlagID, List<Lärare> lärarlag, List<Student> studenter)
         {
             this.kursNamn = kursNamn;
             this.startDatum = startdatum;
             this.slutDatum = slutdatum;
-            this.möjligaBetyg = möjligabetyg;
+            this.betyg = betyg;
             this.kursID = kursID;
             this.lärarlagID = lärarlagID;
-            this.slutbetyg = slutBetyg;
-            this.Lärare = lärare;
+            this.Lärarlag = lärarlag;
             this.Studenter = studenter;
 
         }

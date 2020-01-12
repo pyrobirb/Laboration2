@@ -104,20 +104,22 @@ namespace Laboration2
             string KursNamn = kursNamnInputTextBox.Text;
             DateTime StartDateTime = StartdateTimePicker.Value;
             DateTime SlutDateTime = StartdateTimePicker.Value;
-            string Möjligabetyg = "U, G, VG";
+            string betyg = "U, G, VG";
             string KursID = "12345";
             string LärarlagID = "999";
-            string Slutbetyg = "Ej satt";
-            List<Lärare> DeltagandeLärare = null; // Ändra till selecteditems i lärarlistan
+            List<Lärare> Lärarlag = null; // Ändra till selecteditems i lärarlistan
             List<Student> DeltagandeStudenter = null; // Ändra till selecteditems i Studentlistan
 
 
 
-            Kurs nyKurs = new Kurs(KursNamn, StartDateTime, SlutDateTime, Möjligabetyg, KursID, LärarlagID, Slutbetyg, DeltagandeLärare, DeltagandeStudenter);
+            Kurs nyKurs = new Kurs(KursNamn, StartDateTime, SlutDateTime, betyg, KursID, LärarlagID, Lärarlag, DeltagandeStudenter);
 
             
         }
 
-       
+        private void betygtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

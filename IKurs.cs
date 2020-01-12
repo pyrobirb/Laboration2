@@ -12,10 +12,9 @@ namespace Laboration2
 
         DateTime startDatum { get; set; }
         DateTime slutDatum { get; set; }
-        string möjligaBetyg { get; set; }
+        string betyg { get; set; }
         string kursID { get; set; }
         string lärarlagID { get; set; }
-        string slutbetyg { get; set; }
 
     }
 }
