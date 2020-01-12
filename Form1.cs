@@ -18,7 +18,7 @@ namespace Laboration2
 
             ListBox VisaStudenterlistBox = new ListBox();
             VisaStudenterlistBox.Items.Clear();
-           
+
             VisaStudenterlistBox.DisplayMember = "förnamn";
             VisaStudenterlistBox.ValueMember = "studentID";
 
@@ -46,7 +46,7 @@ namespace Laboration2
             foreach (var item in studentLista)
             {
                 VisaStudenterlistBox.Items.Add(String.Format("{0} {1} {2}", item.studentID.ToUpper(), item.förnamn, item.efternamn));
-                
+
             }
 
             VisaStudenterlistBox.Sorted = true;
@@ -55,7 +55,7 @@ namespace Laboration2
 
 
             //Lärarelista
-            
+
 
             var lärareLista = Lärare.LärareLista();
 
@@ -70,28 +70,28 @@ namespace Laboration2
 
 
             //Kursnamn
-            
-            
 
 
-            
+
+
+
 
 
         }
 
         private void VisaLärarelistBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void KursNamnInputTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void StartdateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void SlutdateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -107,14 +107,54 @@ namespace Laboration2
             string betyg = "U, G, VG";
             string KursID = "12345";
             string LärarlagID = "999";
-            List<Lärare> Lärarlag = null; // Ändra till selecteditems i lärarlistan
-            List<Student> DeltagandeStudenter = null; // Ändra till selecteditems i Studentlistan
+            var lärarlag = VisaLärarelistBox.SelectedItems;
+            var studentlag = VisaStudenterlistBox.SelectedItems;
+
+            var lärareLista = Lärare.LärareLista();
+
+
+            List<Lärare> LärarLag = new List<Lärare>();
+
+            foreach (var item in lärareLista)
+            {
+                foreach (var item2 in lärarlag)
+                {
+                    if (item2.ToString().ToUpper().Contains(item.LärarID.ToString().ToUpper()))
+                    {
+                        LärarLag.Add(item);
+                    }
+                }
+            }
+
+
+            var studentListan = Student.StudentLista();
+
+            List<Student> DeltagandeStudenter = new List<Student>();
+
+            foreach (var item in studentListan)
+            {
+                foreach (var item2 in DeltagandeStudenter)
+                {
+                    if (item2.ToString().ToUpper().Contains(item.studentID.ToUpper().ToString()))
+                    {
+                        DeltagandeStudenter.Add(item);
+                    }
+                }
+
+
+            }
+
+
+            Kurs nyKurs = new Kurs(KursNamn, StartDateTime, SlutDateTime, betyg, KursID, LärarlagID, LärarLag, DeltagandeStudenter);
 
 
 
-            Kurs nyKurs = new Kurs(KursNamn, StartDateTime, SlutDateTime, betyg, KursID, LärarlagID, Lärarlag, DeltagandeStudenter);
 
-            
+            DeltagandeStudenter.ForEach(i => Console.WriteLine("{0}\t", i));
+            foreach (var item in DeltagandeStudenter)
+            {
+                Console.WriteLine(string.Join("\t", item));
+            }
         }
 
         private void betygtextBox_TextChanged(object sender, EventArgs e)

@@ -42,16 +42,7 @@ namespace Laboration2
 
         public static List<Lärare> LärareLista()
         {
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-            lärareLista.Add(new Lärare("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "L168820"));
-
+            
             return lärareLista;
         }
     }

@@ -35,16 +35,11 @@ namespace Laboration2
 
         //private static List<Student> studentLista = new List<Student>();
 
-        private static List<Student> studentLista { get; set; } = new List<Student>();
+        public static List<Student> studentLista { get; set; } = new List<Student>();
 
         public static List<Student> StudentLista()
         {
-            studentLista.Add(new Student("199001011111", "Lisa", "Svensson", "Rönngatan 10", "0721423496", "lisasvensson@gmail.com", "hbvjucyghu68", "s168820"));
-            studentLista.Add(new Student("199001011111", "Misa", "Fvensson", "Röngatan 40", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "s168824"));
-            studentLista.Add(new Student("199001011111", "Sisa", "Evensson", "Rögatan 56", "0721489696", "lisasvensson@gmail.com", "hbvjucyghu68", "s168823"));
-            studentLista.Add(new Student("199001011111", "Kisa", "Avensson", "Lönngatan 4", "0721243696", "lisasvensson@gmail.com", "hbvjucyghu68", "s168821"));
-            studentLista.Add(new Student("199001011111", "Pisa", "Savensson", "Lonngatan 4", "0721654396", "lisasvensson@gmail.com", "hbvjucyghu68", "s168825"));
-
+            
             return studentLista;
         }
 
