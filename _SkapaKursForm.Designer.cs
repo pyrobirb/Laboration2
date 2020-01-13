@@ -1,6 +1,6 @@
 ﻿namespace Laboration2
 {
-    partial class Form1
+    partial class _SkapaKursForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.VisaStudenterlistBox = new System.Windows.Forms.ListBox();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.VisaLärarelistBox = new System.Windows.Forms.ListBox();
             this.kursNamnInputTextBox = new System.Windows.Forms.TextBox();
             this.kursNamn = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.FinishedButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,10 +54,6 @@
             this.VisaStudenterlistBox.Size = new System.Drawing.Size(207, 95);
             this.VisaStudenterlistBox.TabIndex = 0;
             this.VisaStudenterlistBox.SelectedIndexChanged += new System.EventHandler(this.VisaStudenterlistBox_SelectedIndexChanged);
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(Laboration2.Student);
             // 
             // VisaLärarelistBox
             // 
@@ -148,6 +144,10 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Möjliga betyg";
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(Laboration2.Student);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +165,7 @@
             this.Controls.Add(this.VisaLärarelistBox);
             this.Controls.Add(this.VisaStudenterlistBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Ç";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -8,13 +8,14 @@ namespace Laboration2
 {
     interface IKurs
     {
-        string kursNamn { get; set; }
+        string kursNamn { get; }
 
-        DateTime startDatum { get; set; }
-        DateTime slutDatum { get; set; }
-        string betyg { get; set; }
-        string kursID { get; set; }
-        string lärarlagID { get; set; }
+        DateTime startDatum { get; }
+        DateTime slutDatum { get; }
+        string betyg { get; }
+        string kursID { get; }
+        string lärarlagID { get; }
+
 
     }
 }

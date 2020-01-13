@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Laboration2
 {
-    public partial class Form1 : Form
+    public partial class _SkapaKursForm : Form
     {
-        public Form1()
+        public _SkapaKursForm()
         {
             InitializeComponent();
 
@@ -41,7 +41,7 @@ namespace Laboration2
         private void Form1_Load(object sender, EventArgs e)
         {
             //Studentlista
-            var studentLista = Student.StudentLista();
+            var studentLista = Student.HämtaStudentLista();
 
             foreach (var item in studentLista)
             {
@@ -127,7 +127,7 @@ namespace Laboration2
             }
 
 
-            var studentListan = Student.StudentLista();
+            var studentListan = Student.HämtaStudentLista();
 
             List<Student> DeltagandeStudenter = new List<Student>();
 
@@ -148,13 +148,10 @@ namespace Laboration2
             Kurs nyKurs = new Kurs(KursNamn, StartDateTime, SlutDateTime, betyg, KursID, LärarlagID, LärarLag, DeltagandeStudenter);
 
 
+            Kurs.LäggTillPågåendeKurs(nyKurs);
 
-
-            DeltagandeStudenter.ForEach(i => Console.WriteLine("{0}\t", i));
-            foreach (var item in DeltagandeStudenter)
-            {
-                Console.WriteLine(string.Join("\t", item));
-            }
+            this.Close();
+            
         }
 
         private void betygtextBox_TextChanged(object sender, EventArgs e)

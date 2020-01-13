@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="_SkapaKursForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="_SkapaKursForm.Designer.cs">
+      <DependentUpon>_SkapaKursForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IKurs.cs" />
     <Compile Include="IPerson.cs" />
@@ -59,9 +59,18 @@
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_redigeraKursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_redigeraKursForm.Designer.cs">
+      <DependentUpon>_redigeraKursForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="_redigeraKursForm.resx">
+      <DependentUpon>_redigeraKursForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_SkapaKursForm.resx">
+      <DependentUpon>_SkapaKursForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

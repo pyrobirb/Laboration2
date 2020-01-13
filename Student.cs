@@ -37,7 +37,7 @@ namespace Laboration2
 
         public static List<Student> studentLista { get; set; } = new List<Student>();
 
-        public static List<Student> StudentLista()
+        public static List<Student> HämtaStudentLista()
         {
             
             return studentLista;
