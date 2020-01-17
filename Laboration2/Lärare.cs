@@ -92,11 +92,11 @@ namespace Laboration2
             get { return Förnamn + " " + Efternamn; }
         }
 
-        public override string HämtaPersonuppgifter(string personnummer)
+        public override string HämtaPersonuppgifter(string personnnummer)
         {
-            throw new NotImplementedException();
+            return Personnummer + " " + Förnamn + " " + Efternamn + "    " + "Adress:" + Adress + "    " + "Telnr:" + Telefonnummer + "    " + "Epost:" + Epostadress;
         }
-        
+
         public Lärare(string personnummer, string förnamn, string efternamn, string adress, string telefonnummer, string epostadress, string lösenord, string lärarID)
         {
             this.personnummer = personnummer;

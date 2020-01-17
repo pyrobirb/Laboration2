@@ -76,8 +76,8 @@ namespace Laboration2
             startDateTimePicker.Value = selected.StartDatum;
             slutDateTimePicker.Value = selected.SlutDatum;
             lärarLagIDtextBox.Text = selected.LärarLagID;
-            lärarePåKurslistBox.DataSource = selected.HämtaKursLärare();
-            studenterPåKurslistBox.DataSource = selected.HämtaKursStudent();
+            lärarePåKurslistBox.DataSource = selected.DeltagandeLärareISpecifikKurs_LärarLag;
+            studenterPåKurslistBox.DataSource = selected.DeltagandeStudenterISpecifikKurs;
 
 
 
@@ -86,7 +86,7 @@ namespace Laboration2
 
             foreach (var student in allaStudenter)
             {
-                if (!selected.HämtaKursStudent().Contains(student))
+                if (!selected.DeltagandeStudenterISpecifikKurs.Contains(student))
                 {
                     nyAllaStudenterMinusKursStudenter.Add(student);
                 }
@@ -101,7 +101,7 @@ namespace Laboration2
 
             foreach (var lärare in allaLärare)
             {
-                if (!selected.HämtaKursLärare().Contains(lärare))
+                if (!selected.DeltagandeLärareISpecifikKurs_LärarLag.Contains(lärare))
                 {
                     nyAllaLärareMinusKursLärare.Add(lärare);
                 }
@@ -262,7 +262,6 @@ namespace Laboration2
                 }
             }
 
-
             lärarePåKurslistBox.DataSource = nyLärarePåKurs;
             allaLärarelistBox.DataSource = nyAllaLärareMinusKursLärare;
 
@@ -312,7 +311,6 @@ namespace Laboration2
             string kursnamn = kursNamnTextBox.Text;
             DateTime startDatum = startDateTimePicker.Value;
             DateTime slutDatum = slutDateTimePicker.Value;
-            string betyg = "-";
             string kursID = kursIDtextBox.Text;
             string lärarlagID = lärarLagIDtextBox.Text;
             var lärarlag = allaLärarelistBox.Items;
@@ -353,8 +351,9 @@ namespace Laboration2
             var LabNamn = labNamntextBox.Text;
             var LabInfo = labInfotextBox.Text;
             List<Student> LabStudenter = studenterPåKurslistBox.Items.Cast<Student>().ToList();
+            List<Lärare> LabLärare = lärarePåKurslistBox.Items.Cast<Lärare>().ToList();
 
-            Laboration nyLab = new Laboration(LabNamn, LabInfo, LabStudenter) ;
+            Laboration nyLab = new Laboration(LabNamn, LabInfo, LabStudenter, LabLärare) ;
 
             List<Laboration> nyLabLista = new List<Laboration>();
             List<Laboration> gammalLabLista = new List<Laboration>();
@@ -376,7 +375,7 @@ namespace Laboration2
             }
 
 
-            Kurs nyKurs = new Kurs(startDatum, slutDatum, betyg, kursID, kursnamn, lärarlagID, Lärarlag, Studentlag, nyLabLista);
+            Kurs nyKurs = new Kurs(startDatum, slutDatum, kursID, kursnamn, lärarlagID, Lärarlag, Studentlag, nyLabLista);
 
 
             Kurs.LäggTillKurs_SkrivÖverKursMedSammaKursID(nyKurs);
@@ -393,10 +392,23 @@ namespace Laboration2
             labNamntextBox.Text = selectedLab.LabNamn;
             labInfotextBox.Text = selectedLab.LabInfo;
 
+            List<Student> selectedLabStudents = selectedLab.ListaAllaDeltagandeStudenter();
+            studenterPåLablistBox.DataSource = selectedLabStudents;
+            studenterPåLablistBox.DisplayMember = "StudentFullName";
+            studenterPåLablistBox.ValueMember = "StudentID";
+            lärarePåLablistBox.DataSource = selectedLab.ListaAllaDeltagandeLärare();
+            lärarePåLablistBox.DisplayMember = "LärareFullName";
+            lärarePåLablistBox.ValueMember = "LärarID";
+
 
         }
 
         private void labInfotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void studenterPåLablistBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

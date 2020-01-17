@@ -31,13 +31,7 @@ namespace Laboration2
             get { return slutDatum; }
             set { slutDatum = value; }
         }
-        private string betyg;
-
-        public string Betyg
-        {
-            get { return betyg; }
-            set { betyg = value; }
-        }
+       
         private string kursID;
 
         public string KursID
@@ -55,34 +49,35 @@ namespace Laboration2
         }
 
 
-        private List<Lärare> deltagandeLärareISpecifikKurs_LärarLag = new List<Lärare>();
+        private List<Lärare> deltagandeLärareISpecifikKurs_LärarLag;
 
-        public List<Lärare> HämtaKursLärare()
+        public List<Lärare> DeltagandeLärareISpecifikKurs_LärarLag
         {
-            return deltagandeLärareISpecifikKurs_LärarLag;
+            get { return deltagandeLärareISpecifikKurs_LärarLag; }
+            set { deltagandeLärareISpecifikKurs_LärarLag = value; }
         }
 
-        private List<Student> deltagandeStudenterISpecifikKurs = new List<Student>();
+        private List<Student> deltagandeStudenterISpecifikKurs;
 
-        public List<Student> HämtaKursStudent()
+        public List<Student> DeltagandeStudenterISpecifikKurs
         {
-            return deltagandeStudenterISpecifikKurs;
+            get { return deltagandeStudenterISpecifikKurs; }
+            set { deltagandeStudenterISpecifikKurs = value; }
         }
 
-        
-        public Kurs(DateTime startdatum, DateTime slutdatum, string betyg, string kursID, string kursnamn, string lärarlagID, List<Lärare> lärare, List<Student> studenter, List<Laboration> nylaborationLista)
+
+
+        public Kurs(DateTime startdatum, DateTime slutdatum, string kursID, string kursnamn, string lärarlagID, List<Lärare> lärare, List<Student> studenter, List<Laboration> nylaborationLista)
         {
             this.StartDatum = startdatum;
             this.SlutDatum = slutdatum;
-            this.Betyg = betyg;
             this.KursID = kursID;
             this.KursNamn = kursnamn;
             this.LärarLagID = lärarlagID;
             this.deltagandeLärareISpecifikKurs_LärarLag = lärare;
             this.deltagandeStudenterISpecifikKurs = studenter;
             this.Laborationer = nylaborationLista;
-            //Laboration nyLab = new Laboration(nylaboration.LabNamn, nylaboration.LabInfo, nylaboration.StudenterPåLabb);
-            //this.Laborationer.Add(nyLab);
+            
         }
 
         
@@ -95,7 +90,7 @@ namespace Laboration2
             {
                 if (kurs.kursID == nyKurs.kursID)
                 {
-                    foreach (var kurs1 in aktivLista)
+                    for (int i = 0; i < aktivLista.Count; i++)
                     {
                         aktivLista.Remove(kurs);
                         
@@ -113,6 +108,18 @@ namespace Laboration2
             PågåendeKurser.Remove(kursAttTaBort);
         }
 
+        
+        
+
+        public List<Student> ListaAllaDeltagandeStudenter()
+        {
+            return DeltagandeStudenterISpecifikKurs;
+        }
+
+        public List<Lärare> ListaAllaDeltagandeLärare()
+        {
+            return DeltagandeLärareISpecifikKurs_LärarLag;
+        }
 
         private static List<Kurs> pågåendeKurser = new List<Kurs>();
 
@@ -129,7 +136,6 @@ namespace Laboration2
             get { return laborationer; }
             set { laborationer = value; }
         }
-
 
     }
 

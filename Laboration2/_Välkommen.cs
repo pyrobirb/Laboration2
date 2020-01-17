@@ -66,5 +66,22 @@ namespace Laboration2
             _LäggTillNyLab Form = new _LäggTillNyLab();
             Form.Show();
         }
+
+        private void BetygsättLab_Click(object sender, EventArgs e)
+        {
+            _BetygsättStudentLab Form = new _BetygsättStudentLab();
+            Form.Show();
+        }
+
+        private void antalPersonerlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sökPersUppgbutton_Click(object sender, EventArgs e)
+        {
+            _SökPersUppg Form = new _SökPersUppg();
+            Form.Show();
+        }
     }
 }

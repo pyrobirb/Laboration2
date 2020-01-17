@@ -63,6 +63,10 @@
             this.tilldelaLablabel = new System.Windows.Forms.Label();
             this.labbLabel = new System.Windows.Forms.Label();
             this.allaLaborationerlistBox = new System.Windows.Forms.ListBox();
+            this.studenterPåLablistBox = new System.Windows.Forms.ListBox();
+            this.lärarePåLablistBox = new System.Windows.Forms.ListBox();
+            this.label = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // VisaAllaKurserListBox
@@ -382,11 +386,52 @@
             this.allaLaborationerlistBox.TabIndex = 39;
             this.allaLaborationerlistBox.SelectedIndexChanged += new System.EventHandler(this.allaLaborationerlistBox_SelectedIndexChanged);
             // 
+            // studenterPåLablistBox
+            // 
+            this.studenterPåLablistBox.FormattingEnabled = true;
+            this.studenterPåLablistBox.Location = new System.Drawing.Point(419, 498);
+            this.studenterPåLablistBox.Name = "studenterPåLablistBox";
+            this.studenterPåLablistBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.studenterPåLablistBox.Size = new System.Drawing.Size(120, 95);
+            this.studenterPåLablistBox.TabIndex = 40;
+            this.studenterPåLablistBox.SelectedIndexChanged += new System.EventHandler(this.studenterPåLablistBox_SelectedIndexChanged);
+            // 
+            // lärarePåLablistBox
+            // 
+            this.lärarePåLablistBox.FormattingEnabled = true;
+            this.lärarePåLablistBox.Location = new System.Drawing.Point(561, 498);
+            this.lärarePåLablistBox.Name = "lärarePåLablistBox";
+            this.lärarePåLablistBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lärarePåLablistBox.Size = new System.Drawing.Size(120, 95);
+            this.lärarePåLablistBox.TabIndex = 41;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(419, 471);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(108, 13);
+            this.label.TabIndex = 42;
+            this.label.Text = "Studenter på vald lab";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(561, 471);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Lärare på vald lab";
+            // 
             // _RedigeraKurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 646);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.lärarePåLablistBox);
+            this.Controls.Add(this.studenterPåLablistBox);
             this.Controls.Add(this.allaLaborationerlistBox);
             this.Controls.Add(this.labbLabel);
             this.Controls.Add(this.tilldelaLablabel);
@@ -467,5 +512,9 @@
         private System.Windows.Forms.Label tilldelaLablabel;
         private System.Windows.Forms.Label labbLabel;
         private System.Windows.Forms.ListBox allaLaborationerlistBox;
+        private System.Windows.Forms.ListBox studenterPåLablistBox;
+        private System.Windows.Forms.ListBox lärarePåLablistBox;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label2;
     }
 }

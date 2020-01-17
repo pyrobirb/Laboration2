@@ -77,6 +77,10 @@ namespace Laboration2
             get { return Förnamn + " " + Efternamn; }
         }
 
+        public override string HämtaPersonuppgifter(string personnnummer)
+        {
+            return Personnummer + " " + Förnamn + " " + Efternamn + "    " + "Adress:" + Adress + "    " + "Telnr:" + Telefonnummer + "    " + "Epost:" + Epostadress;
+        }
 
         //Detta är konstruktor
         public Student(string personnummer, string förnamn, string efternamn, string adress, string telefonnummer, string epostadress, string lösenord, string studentID, string betyg)
@@ -101,9 +105,8 @@ namespace Laboration2
         }
 
 
-        public override string HämtaPersonuppgifter(string personnummer)
-        {
-            throw new NotImplementedException();
-        }
+        
+
+
     }
 }

@@ -64,7 +64,6 @@ namespace Laboration2
             string kursnamn = KursnamnTextBox.Text;
             DateTime startDatum = StartdatumVäljare.Value;
             DateTime slutDatum = SlutdatumVäljare.Value;
-            string betyg = "-";
             string kursID = KursIDTextBox.Text;
             string lärarlagID = LärarlagIDTextBox.Text;
             var lärarlag = LärareListBox.SelectedItems;
@@ -103,15 +102,15 @@ namespace Laboration2
 
             List<Student> deltagandeStudenterILabb = studentlag.Cast<Student>().ToList();
 
-            var nyLabb = new Laboration("Lab1", "Information om lab1", deltagandeStudenterILabb);
-            var nyLabb2 = new Laboration("Lab2", "Information om lab2", deltagandeStudenterILabb);
+            var nyLabb = new Laboration("Lab1", "Information om lab1", deltagandeStudenterILabb, Lärarlag);
+            var nyLabb2 = new Laboration("Lab2", "Information om lab2", deltagandeStudenterILabb, Lärarlag);
 
             List<Laboration> allaLabbar = new List<Laboration>();
             allaLabbar.Add(nyLabb);
             allaLabbar.Add(nyLabb2);
 
 
-            Kurs nyKurs = new Kurs(startDatum, slutDatum, betyg, kursID, kursnamn, lärarlagID, Lärarlag, Studentlag, allaLabbar);
+            Kurs nyKurs = new Kurs(startDatum, slutDatum, kursID, kursnamn, lärarlagID, Lärarlag, Studentlag, allaLabbar);
 
             Kurs.LäggTillKurs_SkrivÖverKursMedSammaKursID(nyKurs);
 

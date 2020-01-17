@@ -50,17 +50,17 @@ namespace Laboration2
 
             var StartDatum = selectedKurs.StartDatum;
             var SlutDatum = selectedKurs.SlutDatum;
-            var Betyg = selectedKurs.Betyg;
+           
             var KursID = selectedKurs.KursID;
             var KursNamn = selectedKurs.KursNamn;
             var LärarLagID = selectedKurs.LärarLagID;
-            var deltagandeLärareISpecifikKurs_LärarLag = selectedKurs.HämtaKursLärare();
-            var deltagandeStudenterISpecifikKurs = selectedKurs.HämtaKursStudent();
+            var deltagandeLärareISpecifikKurs_LärarLag = selectedKurs.DeltagandeLärareISpecifikKurs_LärarLag;
+            var deltagandeStudenterISpecifikKurs = selectedKurs.DeltagandeStudenterISpecifikKurs;
 
             var LabNamn = textBox1.Text;
             var LabInfo = textBox2.Text;
 
-            Laboration nyLab = new Laboration(LabNamn, LabInfo, deltagandeStudenterISpecifikKurs);
+            Laboration nyLab = new Laboration(LabNamn, LabInfo, deltagandeStudenterISpecifikKurs, deltagandeLärareISpecifikKurs_LärarLag);
             List<Laboration> gamlaLabbar_plus_nyaLabbar = new List<Laboration>();
             var gamlaLabbar = selectedKurs.Laborationer;
 
@@ -68,7 +68,7 @@ namespace Laboration2
             gamlaLabbar_plus_nyaLabbar.Add(nyLab);
 
 
-            Kurs nyKurs = new Kurs(StartDatum, SlutDatum, Betyg, KursID, KursNamn, LärarLagID, deltagandeLärareISpecifikKurs_LärarLag, deltagandeStudenterISpecifikKurs, gamlaLabbar_plus_nyaLabbar);
+            Kurs nyKurs = new Kurs(StartDatum, SlutDatum, KursID, KursNamn, LärarLagID, deltagandeLärareISpecifikKurs_LärarLag, deltagandeStudenterISpecifikKurs, gamlaLabbar_plus_nyaLabbar);
 
             Kurs.LäggTillKurs_SkrivÖverKursMedSammaKursID(nyKurs);
 

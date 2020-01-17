@@ -54,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Laboration.cs" />
+    <Compile Include="_BetygsättStudentLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_BetygsättStudentLab.Designer.cs">
+      <DependentUpon>_BetygsättStudentLab.cs</DependentUpon>
+    </Compile>
     <Compile Include="_LäggTillNyLab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="_RedigeraKurs.Designer.cs">
       <DependentUpon>_RedigeraKurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_SökPersUppg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_SökPersUppg.Designer.cs">
+      <DependentUpon>_SökPersUppg.cs</DependentUpon>
     </Compile>
     <Compile Include="_Välkommen.cs">
       <SubType>Form</SubType>
@@ -86,11 +98,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
+    <EmbeddedResource Include="_BetygsättStudentLab.resx">
+      <DependentUpon>_BetygsättStudentLab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_LäggTillNyLab.resx">
       <DependentUpon>_LäggTillNyLab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_RedigeraKurs.resx">
       <DependentUpon>_RedigeraKurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_SökPersUppg.resx">
+      <DependentUpon>_SökPersUppg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_Välkommen.resx">
       <DependentUpon>_Välkommen.cs</DependentUpon>

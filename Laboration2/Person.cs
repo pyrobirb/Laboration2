@@ -71,7 +71,9 @@ namespace Laboration2
 
         public virtual string HämtaPersonuppgifter(string personnnummer)
         {
-            throw new NotImplementedException();
+            return Personnummer + " " + Förnamn + " " + Efternamn + "    " + "Adress:" + Adress + "    " + "Telnr:" + Telefonnummer + "    " + "Epost:" + Epostadress;
         }
+
+
     }
 }

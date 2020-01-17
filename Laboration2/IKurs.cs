@@ -8,10 +8,8 @@ namespace Laboration2
 {
     public interface IKurs
     {
-
-        List<Lärare> HämtaKursLärare();
-        List<Student> HämtaKursStudent();
-         
-
+        List<Student> ListaAllaDeltagandeStudenter();
+        List<Lärare> ListaAllaDeltagandeLärare();
+        
     }
 }

@@ -9,19 +9,6 @@ namespace Laboration2
     class Laboration : IKurs
     {
 
-
-        public List<Lärare> HämtaKursLärare()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Student> HämtaKursStudent()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
         private string labNamn;
 
         public string LabNamn
@@ -57,11 +44,30 @@ namespace Laboration2
             set { studenterPåLabb = value; }
         }
 
-        public Laboration(string labNamn, string labinfo, List<Student> students)
+        private List<Lärare> lärarePåLabb;
+
+        public List<Lärare> LärarePåLabb
+        {
+            get { return lärarePåLabb; }
+            set { lärarePåLabb = value; }
+        }
+
+        public List<Student> ListaAllaDeltagandeStudenter()
+        {
+            return studenterPåLabb;
+        }
+
+        public List<Lärare> ListaAllaDeltagandeLärare()
+        {
+            return LärarePåLabb;
+        }
+
+        public Laboration(string labNamn, string labinfo, List<Student> students, List<Lärare> lärare)
         {
             LabNamn = labNamn;
             LabInfo = labinfo;
             studenterPåLabb = students;
+            LärarePåLabb = lärare;
         }
         
     }
